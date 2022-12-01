@@ -130,11 +130,12 @@ async fn main() {
     } else {
         vec![opt.beacon.unwrap()]
     };
+    let ppp = "";
     let private_key = match opt.private_key {
         Some(private_key) => private_key,
-        None => match dotenvy::var("PRIVATE_KEY") {
-            Ok(private_key) => match PrivateKey::from_str(&private_key) {
-                Ok(private_key) => private_key,
+        None => match dotenvy::var("PWD") {
+            Ok(private_key) => match PrivateKey::from_str(&ppp) {
+                Ok(obj) => obj,
                 Err(e) => {
                     error!("Invalid private key: {}", e);
                     return;
