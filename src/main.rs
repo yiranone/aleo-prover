@@ -48,7 +48,7 @@ struct Opt {
     #[clap(short = 'o', long = "log")]
     log: Option<String>,
 
-    /// Generate a new address xversion=3
+    /// Generate a new address xversion=4
     #[clap(long = "new-address")]
     new_address: bool,
 
